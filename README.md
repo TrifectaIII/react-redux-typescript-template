@@ -1,6 +1,6 @@
 # react-redux-template
 
-My personalized starting point for react-redux projects. 
+My personalized starting point for react-redux projects with TypeScript.
 
 ---
 
