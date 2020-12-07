@@ -1,9 +1,12 @@
-import React from 'react';
-import './App.css';
+import * as React from 'react';
 import {connect} from 'react-redux';
+import { GlobalState } from './redux/store';
+
+import './App.css';
 
 //import component
-import Component from './components/Component';
+import PlaceholderComponent from './components/PlaceholderComponent';
+
 
 class App extends React.Component {
 
@@ -15,13 +18,13 @@ class App extends React.Component {
         return (
             <div>
                 <h1>React-Redux Template</h1>
-                <Component/>
+                <PlaceholderComponent/>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state: GlobalState, ownProps: any) => {
     return {
         
     }

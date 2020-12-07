@@ -1,5 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import {connect} from 'react-redux';
+import {GlobalState} from '../redux/store';
+
+import './PlaceholderComponent.css';
 
 class Component extends React.Component {
 
@@ -17,7 +20,7 @@ class Component extends React.Component {
     
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state:GlobalState, ownProps: any) => {
     return {
         
     }
