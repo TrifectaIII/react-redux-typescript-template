@@ -5,13 +5,20 @@ import {connect} from 'react-redux';
 //import component
 import Component from './components/Component';
 
-function App() {
-  return (
-    <div>
-        <h1>React-Redux Template</h1>
-        <Component/>
-    </div>
-  );
+class App extends React.Component {
+
+    // constructor (props) {
+    //     super (props);
+    // }
+
+    render = () => {
+        return (
+            <div>
+                <h1>React-Redux Template</h1>
+                <Component/>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = (state, ownProps) => {

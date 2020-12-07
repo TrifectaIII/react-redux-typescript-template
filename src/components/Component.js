@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 
 class Component extends React.Component {
 
-    constructor (props) {
-        super (props);
-    }
+    // constructor (props) {
+    //     super (props);
+    // }
 
     render = () => {
         return (
