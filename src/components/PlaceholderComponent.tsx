@@ -4,7 +4,7 @@ import {GlobalState} from '../redux/store';
 
 import './PlaceholderComponent.css';
 
-class Component extends React.Component {
+class PlaceholderComponent extends React.Component {
 
     // constructor (props) {
     //     super (props);
@@ -30,4 +30,4 @@ const mapDispatchToProps = {
    
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaceholderComponent);
