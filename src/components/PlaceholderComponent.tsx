@@ -1,45 +1,62 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {GlobalState} from '../redux/store';
+import {connect, ConnectedProps} from 'react-redux';
 
 import './PlaceholderComponent.css';
 
-import {Action, placeholderAction} from '../redux/actions';
+//get global state from redux
+import {GlobalState} from '../redux/store';
 
-const mapStateToProps = (state:GlobalState, ownProps: {}) => {
+//get dispatch actions
+import {add, subtract} from '../redux/reducers/placeholderReducer/actions';
+
+
+//add non-redux props
+interface OwnProps {
+
+}
+
+//mutate redux state to props, using ownprops if neccesary
+const mapStateToProps = (state:GlobalState, ownProps: OwnProps) => {
     return {
         counter: state.placeholderReducer.counter,
     }
 }
 
+//add dispatch actions to props
 const mapDispatchToProps = {
-   placeholderAction,
+   add,
+   subtract,
 }
 
-interface PlaceholderComponent_Props {
-    counter: number,
-    placeholderAction: () => Action,
+//combine into connector to redux store, and get type
+const connector = connect(mapStateToProps, mapDispatchToProps);
+type ReduxProps = ConnectedProps<typeof connector>;
+
+//type of component props is combined non-redux and redux props
+type Props = ReduxProps & OwnProps
+
+//type of component state
+interface State {
+
 }
 
-interface PlaceholderComponent_State {
+//create component using types
+class PlaceholderComponent extends React.Component <Props, State> {
 
-}
-
-class PlaceholderComponent extends React.Component<PlaceholderComponent_Props, PlaceholderComponent_State> {
-
-    // constructor (props) {
+    // constructor (props: Props) {
     //     super (props);
     // }
 
     render = () => {
         return (
             <div>
-                <button onClick = {this.props.placeholderAction}>Click Me!</button>
+                <button onClick = {()=>this.props.add()}>Add</button>
+                <br/>
+                <button onClick = {()=>this.props.subtract()}>Subtract</button>
                 <h2>{this.props.counter}</h2>
             </div>
           );
     }
-    
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaceholderComponent);
+export default connector(PlaceholderComponent);

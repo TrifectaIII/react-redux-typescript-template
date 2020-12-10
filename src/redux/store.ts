@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import {globalReducer} from './reducer';
+import {globalReducer} from './reducers';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 var store = createStore(
