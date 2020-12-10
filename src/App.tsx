@@ -12,7 +12,8 @@ import PlaceholderComponent from './components/PlaceholderComponent';
 
 //add non-redux props
 interface OwnProps {
-
+    //can use optional properties here like so:
+    // property?: string
 }
 
 //mutate redux state to props, using ownprops if neccesary
@@ -32,7 +33,7 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
 //type of component props is combined non-redux and redux props
-type Props = ReduxProps & OwnProps
+type Props = ReduxProps & OwnProps;
 
 //type of component state
 interface State {
