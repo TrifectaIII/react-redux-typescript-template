@@ -16,16 +16,16 @@ const mapDispatchToProps = {
    placeholderAction,
 }
 
-interface PC_Props {
+interface PlaceholderComponent_Props {
     counter: number,
     placeholderAction: any,
 }
 
-interface PC_State {
+interface PlaceholderComponent_State {
 
 }
 
-class PlaceholderComponent extends React.Component<PC_Props, PC_State> {
+class PlaceholderComponent extends React.Component<PlaceholderComponent_Props, PlaceholderComponent_State> {
 
     // constructor (props) {
     //     super (props);
