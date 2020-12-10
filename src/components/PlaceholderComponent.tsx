@@ -4,9 +4,9 @@ import {GlobalState} from '../redux/store';
 
 import './PlaceholderComponent.css';
 
-import {placeholderAction} from '../redux/actions';
+import {Action, placeholderAction} from '../redux/actions';
 
-const mapStateToProps = (state:GlobalState, ownProps: any) => {
+const mapStateToProps = (state:GlobalState, ownProps: {}) => {
     return {
         counter: state.placeholderReducer.counter,
     }
@@ -18,7 +18,7 @@ const mapDispatchToProps = {
 
 interface PlaceholderComponent_Props {
     counter: number,
-    placeholderAction: any,
+    placeholderAction: () => Action,
 }
 
 interface PlaceholderComponent_State {
