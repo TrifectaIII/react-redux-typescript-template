@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux'
-import placeholderReducer from './placeholderReducer'
+import exampleReducer from './exampleReducer'
 
+//combine all reducers and export
 export const globalReducer = combineReducers({
-    placeholderReducer,
+    exampleReducer,
 });

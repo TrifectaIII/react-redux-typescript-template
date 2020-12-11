@@ -1,19 +1,22 @@
 import * as React from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 
-import './App.css';
-
 //get global state from redux
 import {GlobalState} from './redux/store';
 
 //get components
-import PlaceholderComponent from './components/PlaceholderComponent';
+import ExampleComponent from './components/ExampleComponent';
 
+import './App.css';
+
+
+// PROPS
+///////////////////////////////////////////////////////
 
 //add non-redux props
 interface OwnProps {
     //can use optional properties here like so:
-    // property?: string
+    // propertyName?: type
 }
 
 //mutate redux state to props, using ownprops if neccesary
@@ -32,13 +35,21 @@ const mapDispatchToProps = {
 const connector = connect(mapStateToProps, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
-//type of component props is combined non-redux and redux props
-type Props = ReduxProps & OwnProps;
+//type of component props is intersection of non-redux and redux props
+type Props = OwnProps & ReduxProps;
 
-//type of component state
+
+//STATE
+///////////////////////////////////////////////////////
+
+//type of internal component state
 interface State {
 
 }
+
+
+//CLASS
+///////////////////////////////////////////////////////
 
 class App extends React.Component<Props, State> {
 
@@ -50,10 +61,11 @@ class App extends React.Component<Props, State> {
         return (
             <div>
                 <h1>React-Redux Template</h1>
-                <PlaceholderComponent/>
+                <ExampleComponent/>
             </div>
         );
     }
 }
 
+//combine with connector and export
 export default connector(App);
