@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 
-
 //access redux store
 import store from './redux/store';
 
@@ -11,6 +10,7 @@ import store from './redux/store';
 import App from './App';
 
 import './index.css';
+
 
 //render whole app, while providing store to components
 ReactDOM.render(

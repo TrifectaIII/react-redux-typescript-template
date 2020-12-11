@@ -11,7 +11,11 @@ const initialState: ExampleState = {
 }
 
 //handle actions
-export default function (state=initialState, action: ActionTypes): ExampleState {
+export default 
+    function (
+        state: ExampleState = initialState, 
+        action: ActionTypes
+    ): ExampleState {
 
     switch(action.type) {
 

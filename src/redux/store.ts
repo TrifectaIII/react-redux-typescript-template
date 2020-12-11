@@ -7,7 +7,7 @@ export default createStore(
     
     globalReducer,
     
-    composeWithDevTools(),//this line enables redux devtools extention
+    composeWithDevTools(),//this line enables redux devtools browser extention
 );
 
 //get state for combined states of all reducers

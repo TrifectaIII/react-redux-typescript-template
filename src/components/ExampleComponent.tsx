@@ -38,14 +38,14 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
 //type of component props is intersection of non-redux and redux props
-type Props = OwnProps & ReduxProps;
+type ComponentProps = OwnProps & ReduxProps;
 
 
 //STATE
 ///////////////////////////////////////////////////////
 
 //type of internal component state
-interface State {
+interface ComponentState {
     inputValue: number
 }
 
@@ -54,23 +54,23 @@ interface State {
 ///////////////////////////////////////////////////////
 
 //create component using types
-class ExampleComponent extends React.Component <Props, State> {
+class ExampleComponent extends React.Component <ComponentProps, ComponentState> {
 
-    constructor (props: Props) {
+    constructor (props: ComponentProps) {
         super (props);
 
         //construc state using interface
         this.state = {
             inputValue: 0,
-        } as State;
+        } as ComponentState;
     }
 
     //input event handler using React typing
-    handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         this.setState({inputValue: parseFloat(event.target.value)});
     }
 
-    render = () => {
+    render = (): JSX.Element => {
         return (
             <div>
                 <button onClick = {()=>this.props.add()}>Add</button>
