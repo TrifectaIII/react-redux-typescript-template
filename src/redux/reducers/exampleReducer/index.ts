@@ -1,21 +1,21 @@
-import {ADD, SUBTRACT, CHANGE, ActionTypes} from './actionTypes'
+import {ADD, SUBTRACT, CHANGE, ExampleReducerActionTypes} from './actionTypes'
 
 //type of state slice
-interface ExampleState {
+interface ExampleReducerState {
     counter: number
 }
 
 //starting state
-const initialState: ExampleState = {
+const initialState: ExampleReducerState = {
     counter: 0,
 }
 
 //handle actions
 export default 
     function (
-        state: ExampleState = initialState, 
-        action: ActionTypes
-    ): ExampleState {
+        state: ExampleReducerState = initialState, 
+        action: ExampleReducerActionTypes
+    ): ExampleReducerState {
 
     switch(action.type) {
 
@@ -34,7 +34,7 @@ export default
         case CHANGE:
             return {
                 ...state,
-                counter: state.counter + action.amount,
+                counter: state.counter + parseFloat(action.amount),
             };
 
         default:

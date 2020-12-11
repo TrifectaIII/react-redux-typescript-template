@@ -28,9 +28,7 @@ const mapStateToProps = (state:GlobalState, ownProps: OwnProps) => {
 
 //add dispatch actions to props
 const mapDispatchToProps = {
-   add,
-   subtract,
-   change,
+   add, subtract, change,
 }
 
 //combine into connector to redux store, and get type
@@ -38,15 +36,15 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
 //type of component props is intersection of non-redux and redux props
-type ComponentProps = OwnProps & ReduxProps;
+type ExampleComponentProps = OwnProps & ReduxProps;
 
 
 //STATE
 ///////////////////////////////////////////////////////
 
 //type of internal component state
-interface ComponentState {
-    inputValue: number
+interface ExampleComponentState {
+    inputValue: string
 }
 
 
@@ -54,35 +52,40 @@ interface ComponentState {
 ///////////////////////////////////////////////////////
 
 //create component using types
-class ExampleComponent extends React.Component <ComponentProps, ComponentState> {
+class ExampleComponent 
+    extends React.Component 
+    <ExampleComponentProps, ExampleComponentState> {
 
-    constructor (props: ComponentProps) {
-        super (props);
+        constructor (props: ExampleComponentProps) {
+            super (props);
 
-        //construc state using interface
-        this.state = {
-            inputValue: 0,
-        } as ComponentState;
-    }
+            //construc state using interface
+            this.state = {
+                inputValue: '0',
+            } as ExampleComponentState;
+        }
 
-    //input event handler using React typing
-    handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        this.setState({inputValue: parseFloat(event.target.value)});
-    }
+        //input event handler using React typing
+        handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+            this.setState({inputValue: event.target.value});
+        }
 
-    render = (): JSX.Element => {
-        return (
-            <div>
-                <button onClick = {()=>this.props.add()}>Add</button>
-                <br/>
-                <button onClick = {()=>this.props.subtract()}>Subtract</button>
-                <br/>
-                <input type="number" value={this.state.inputValue} onChange={this.handleChange} />
-                <button onClick={()=>this.props.change(this.state.inputValue)}>Change</button>
-                <h2>{this.props.counter}</h2>
-            </div>
-          );
-    }
+        render = (): JSX.Element => {
+            return (
+                <div>
+
+                    <button onClick = {this.props.add}>Add</button><br/>
+
+                    <button onClick = {this.props.subtract}>Subtract</button><br/>
+
+                    <input type="number" value={this.state.inputValue} onChange={this.handleChange} />
+                    <button onClick={() => this.props.change(this.state.inputValue)}>Change</button>
+                    
+                    <h2>{this.props.counter}</h2>
+
+                </div>
+            );
+        }
 }
 
 //combine with connector and export

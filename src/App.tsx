@@ -36,14 +36,14 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type ReduxProps = ConnectedProps<typeof connector>;
 
 //type of component props is intersection of non-redux and redux props
-type ComponentProps = OwnProps & ReduxProps;
+type AppProps = OwnProps & ReduxProps;
 
 
 //STATE
 ///////////////////////////////////////////////////////
 
 //type of internal component state
-interface ComponentState {
+interface AppState {
 
 }
 
@@ -51,20 +51,22 @@ interface ComponentState {
 //CLASS
 ///////////////////////////////////////////////////////
 
-class App extends React.Component<ComponentProps, ComponentState> {
+class App 
+    extends React.Component
+    <AppProps, AppState> {
 
-    // constructor (props: ComponentProps) {
-    //     super (props);
-    // }
+        // constructor (props: AppProps) {
+        //     super (props);
+        // }
 
-    render = (): JSX.Element => {
-        return (
-            <div>
-                <h1>React-Redux Template</h1>
-                <ExampleComponent/>
-            </div>
-        );
-    }
+        render = (): JSX.Element => {
+            return (
+                <div>
+                    <h1>React-Redux Template</h1>
+                    <ExampleComponent/>
+                </div>
+            );
+        }
 }
 
 //combine with connector and export

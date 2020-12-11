@@ -1,7 +1,7 @@
 //types for actions
-export const ADD = 'ADD';
-export const SUBTRACT = 'SUBTRACT';
-export const CHANGE = 'CHANGE';
+export const ADD = 'exampleReducer/Add';
+export const SUBTRACT = 'exampleReducer/Subtract';
+export const CHANGE = 'exampleReducer/Change';
 
 //types of actions
 interface Add {
@@ -14,8 +14,8 @@ interface Subtract {
 
 interface Change {
     type: typeof CHANGE
-    amount: number
+    amount: string
 }
 
 //union all action types
-export type ActionTypes = Add | Subtract | Change;
+export type ExampleReducerActionTypes = Add | Subtract | Change;
