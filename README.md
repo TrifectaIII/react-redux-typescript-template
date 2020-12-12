@@ -2,6 +2,12 @@
 
 My personalized starting point for react-redux projects with TypeScript.
 
+## Resources
+
+https://redux.js.org/recipes/usage-with-typescript
+https://react-redux.js.org/using-react-redux/static-typing
+
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
