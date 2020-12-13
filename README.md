@@ -4,9 +4,11 @@ My personalized starting point for react-redux projects with TypeScript.
 
 ## Resources
 
-https://redux.js.org/recipes/usage-with-typescript
-https://react-redux.js.org/using-react-redux/static-typing
-https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md
+[Redux: Usage with TypeScript](https://redux.js.org/recipes/usage-with-typescript)
+
+[React-Redux: Static Typing](https://react-redux.js.org/using-react-redux/static-typing)
+
+[React & Redux in TypeScript - Complete Guide](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md)
 
 
 ---
