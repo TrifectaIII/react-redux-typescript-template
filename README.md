@@ -8,7 +8,7 @@ My personalized starting point for react-redux projects with TypeScript.
 
 [React-Redux: Static Typing](https://react-redux.js.org/using-react-redux/static-typing)
 
-[React & Redux in TypeScript - Complete Guide](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md)
+[React & Redux in TypeScript - Complete Guide by piotrwitek](https://github.com/piotrwitek/react-redux-typescript-guide/blob/master/README.md)
 
 
 ---
