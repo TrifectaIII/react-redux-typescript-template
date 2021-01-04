@@ -7,7 +7,7 @@ import {GlobalState} from '../redux/store';
 //get dispatch actions
 import {add, subtract, change} from '../redux/reducers/exampleReducer/actions';
 
-import './ExampleComponent.css';
+import './ExampleComponent.scss';
 
 
 // PROPS

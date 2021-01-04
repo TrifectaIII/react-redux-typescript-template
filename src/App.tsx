@@ -7,7 +7,7 @@ import {GlobalState} from './redux/store';
 //get components
 import ExampleComponent from './components/ExampleComponent';
 
-import './App.css';
+import './App.scss';
 
 
 // PROPS
